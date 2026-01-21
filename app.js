@@ -12,12 +12,15 @@ keypad.addEventListener('click', (e) => {
   if (!target.matches('button')) return;
 
   const type = target.dataset.type;
+  const key = target.dataset.key;
   const content = target.innerText;
 
-  handleCalculateInput(type, content);
+  handleCalculateInput(type, key, content);
 });
 
-const handleCalculateInput = (type, content) => {
+const handleCalculateInput = (type, key, content) => {
+  if (key === 'clear') calculator.clearAll();
+
   switch (type) {
     case 'number':
       calculator.appendNumber(content);

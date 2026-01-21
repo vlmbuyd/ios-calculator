@@ -127,6 +127,18 @@ export default class Calculator {
   }
 
   /**
+   * 모든 값 초기화 (AC)
+   */
+  clearAll() {
+    this.history = [];
+    this.prevOperand = '';
+    this.operator = '';
+    this.currOperand = INITIAL_DISPLAY_VALUE;
+
+    this.updateDisplay();
+  }
+
+  /**
    * 화면 업데이트
    */
   updateDisplay() {
