@@ -1,7 +1,8 @@
 # iOS Calculator Clone
 
 직무 부트캠프 '코멘토' 과제물의 일환으로 애플(iOS) 계산기를 웹으로 구현한 프로젝트입니다. <br/>
-단순한 UI 구현을 넘어, MVC 패턴을 적용하여 비즈니스 로직과 뷰 제어를 분리하고 Vanilla Javascript를 활용해 실제 계산 기능을 구현하는 데 주력했습니다.
+단순한 UI 구현을 넘어, MVC 패턴을 적용하여 비즈니스 로직과 뷰 제어를 분리하고 <br/>
+Vanilla Javascript를 활용해 실제 계산 기능을 구현하는 데 주력했습니다.
 
 ## Preview
 
@@ -13,7 +14,7 @@
 
 - Core: HTML5, CSS3, Javascript
 - Architecture: MVC Pattern (Model-View-Controller)
-- SCSS: SCSS (Dart Sass)
+- Styling: SCSS (Dart Sass)
 - Package Manager: NPM (Sass 컴파일 환경 구축)
 
 <br/>
@@ -46,15 +47,21 @@ ios-calculator/
 
 ## Key Features & Technical Decisions
 
-**1. JavaScript Architecture (MVC Pattern)**
+**1. JavaScript Architecture (MVC Pattern & Class)**
 
-> 유지보수성과 확장성을 고려하여 코드의 역할을 명확히 분리했습니다.
+> 유지보수성과 확장성을 고려하여 Class를 기반으로 객체 지향 설계를 적용하고, 코드의 역할을 명확히 분리했습니다.
 
-- Model (`Calculator.js`): 계산기 데이터(history, currOperand)와 순수 연산 로직을 담당합니다. 화면(DOM)을 직접 제어하지 않고 상태 관리 및 관련 로직에 집중합니다.
+- Model (`Calculator.js`)
 
-- Controller (`Controller.js`): 사용자 입력(클릭, 키보드)을 감지하고, Model에게 명령을 내리며, 그 결과를 View에 반영하는 중재자 역할을 합니다.
+  - 계산기의 상태(history, currOperand)와 핵심 연산 로직을 **캡슐화**한 클래스입니다.
+  - 데이터의 상태가 변경될 때마다 UI를 동기화하여 최신 값을 화면에 렌더링합니다.
 
-- Entry Point (`app.js`): Calculator와 Controller 인스턴스를 생성하고 의존성을 주입하여 애플리케이션을 초기화합니다.
+- Controller (`Controller.js`)
+
+  - 사용자 입력(클릭, 키보드)을 감지하여 Model에 연산을 위임하고, 전반적인 로직 흐름을 제어하는 중재자 역할을 수행합니다.
+
+- Entry Point (`app.js`)
+  - 애플리케이션의 진입점으로, `Calculator`와 `Controller` 인스턴스를 생성하고 의존성을 주입하여 애플리케이션을 초기화합니다.
 
 **2. Core Logic & Algorithm**
 
