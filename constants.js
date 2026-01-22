@@ -13,6 +13,19 @@ export const OPERATROS = [
   ...OPERATROS_PRIORITES.LOW,
 ];
 
+// 키보드 키 매핑
+export const KEY_MAP = Object.freeze({
+  '*': '×',
+  '/': '÷',
+  '+': '+',
+  '-': '−',
+
+  Enter: '=',
+  '=': '=',
+  Backspace: 'clear',
+  Escape: 'clear',
+});
+
 // 에러 메시지
 export const ERROR_MESSAGE = 'NaN';
 

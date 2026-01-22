@@ -117,7 +117,7 @@ body {
   padding-left: 35px;
   border-radius: 352px;
 }
-.calculator__button:active {
+.calculator__button:active, .calculator__button.pressed {
   transform: scale(0.92);
   filter: brightness(1.4);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
