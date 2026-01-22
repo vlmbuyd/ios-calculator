@@ -19,7 +19,10 @@ keypad.addEventListener('click', (e) => {
 });
 
 const handleCalculateInput = (type, key, content) => {
-  if (key === 'clear') calculator.clearAll();
+  if (key === 'clear') {
+    calculator.clearAll();
+    return;
+  }
 
   switch (type) {
     case 'number':
