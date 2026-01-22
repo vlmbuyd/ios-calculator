@@ -18,6 +18,7 @@ body {
   padding: 239px 17px 74px 17px;
   border-radius: 30px;
   background-color: $bg-app;
+  transition: opacity 0.4s ease-in-out;
 
   &__display {
     @include flex(end, center);
@@ -45,6 +46,8 @@ body {
     width: 88px;
     height: 88px;
     border-radius: 50%;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+      filter 0.4s ease-out, box-shadow 0.4s ease-out;
 
     &--function {
       font-size: 34px;
@@ -70,6 +73,13 @@ body {
       min-width: 190px;
       padding-left: 35px;
       border-radius: 352px;
+    }
+
+    &:active {
+      transform: scale(0.92);
+      filter: brightness(1.4);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      transition: transform 0.1s ease-out, filter 0.1s;
     }
   }
 }
