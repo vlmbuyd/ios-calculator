@@ -119,7 +119,7 @@ export default class Calculator {
   calculateResult() {
     const expression = [...this.history, this.currOperand];
 
-    // [연산자 우선순위] 곱셈/나눗셈 -> 덧셈/뺄셈/나머지 순으로 순회하여 계산
+    // [연산자 우선순위] 곱셈/나눗셈/나머지 -> 덧셈/뺄셈 순으로 순회하여 계산
     this.calculateByPriority(expression, OPERATROS_PRIORITES.HIGH);
     this.calculateByPriority(expression, OPERATROS_PRIORITES.LOW);
 
